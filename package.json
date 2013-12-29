@@ -22,7 +22,8 @@
   ],
   "dependencies": {
     "mixto": "~0.3.0",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "get-parameter-names": "~0.1.2"
   },
   "devDependencies": {
     "coffee-script": "~1.6.3",

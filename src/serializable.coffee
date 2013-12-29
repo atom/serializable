@@ -1,5 +1,6 @@
 {extend} = require 'underscore'
 Mixin = require 'mixto'
+getParameterNames = require 'get-parameter-names'
 
 module.exports =
 class Serializable extends Mixin
@@ -20,8 +21,15 @@ class Serializable extends Mixin
 
     object = Object.create(deserializer.prototype)
     params = extend({}, state, params)
+    delete params.deserializer
     params = object.deserializeParams?(params) ? params
-    deserializer.call(object, params)
+
+    deserializer.parameterNames ?= getParameterNames(deserializer)
+    if deserializer.parameterNames.length > 1 or params.hasOwnProperty(deserializer.parameterNames[0])
+      orderedParams = deserializer.parameterNames.map (name) -> params[name]
+      deserializer.call(object, orderedParams...)
+    else
+      deserializer.call(object, params)
     object
 
   serialize: ->

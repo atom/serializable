@@ -46,3 +46,12 @@ describe "Serializable", ->
     b = Superclass.deserialize(new SubclassB(bar: 2).serialize())
     expect(b instanceof SubclassB).toBe true
     expect(b.bar).toBe 2
+
+  it "allows ordered constructor parameters to be inferred from their names so constructors don't need to take a hash", ->
+    class Example extends Serializable
+      constructor: (@foo, @bar) ->
+      serializeParams: -> {@foo, @bar}
+
+    object = Example.deserialize(new Example(2, 1).serialize())
+    expect(object.foo).toBe 2
+    expect(object.bar).toBe 1
