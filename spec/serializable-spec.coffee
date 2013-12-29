@@ -25,3 +25,24 @@ describe "Serializable", ->
     parentB = Parent.deserialize(parentA.serialize())
     expect(parentB.child.parent).toBe parentB
     expect(parentB.child.foo).toBe 1
+
+  it "allows other deserializers to be registered on a serializable class", ->
+    class Superclass extends Serializable
+
+    class SubclassA extends Superclass
+      constructor: ({@foo}) ->
+      serializeParams: -> {@foo}
+
+    class SubclassB extends Superclass
+      constructor: ({@bar}) ->
+      serializeParams: -> {@bar}
+
+    Superclass.registerDeserializers(SubclassA, SubclassB)
+
+    a = Superclass.deserialize(new SubclassA(foo: 1).serialize())
+    expect(a instanceof SubclassA).toBe true
+    expect(a.foo).toBe 1
+
+    b = Superclass.deserialize(new SubclassB(bar: 2).serialize())
+    expect(b instanceof SubclassB).toBe true
+    expect(b.bar).toBe 2
