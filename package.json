@@ -1,0 +1,39 @@
+{
+  "name": "nostalgia",
+  "version": "0.0.0",
+  "description": "A mixin for making serializable objects",
+  "main": "./lib/serializable",
+  "scripts": {
+    "prepublish": "grunt clean lint coffee",
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atom/nostalgia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/atom/nostalgia/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/atom/nostalgia/raw/master/LICENSE.md"
+    }
+  ],
+  "dependencies": {
+    "mixto": "~0.3.0",
+    "underscore": "~1.5.2"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "jasmine-focused": "~0.12.0",
+    "jasmine-waits-for-callback": "~0.1.0",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-cli": "~0.1.8",
+    "grunt": "~0.4.1",
+    "grunt-shell": "~0.2.2",
+    "grunt-coffeelint": "0.0.6",
+    "rimraf": "~2.2.2",
+    "coffee-cache": "~0.2.0"
+  }
+}
