@@ -36,3 +36,6 @@ class Serializable extends Mixin
     state = @serializeParams?() ? {}
     state.deserializer = @constructor.name
     state
+
+  testSerialization: (params) ->
+    @constructor.deserialize(@serialize(), params)
