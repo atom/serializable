@@ -19,6 +19,8 @@ class Serializable extends Mixin
     else
       deserializer = @deserializers?[state.deserializer]
 
+    return unless deserializer? and deserializer.version is state.version
+
     object = Object.create(deserializer.prototype)
     params = extend({}, state, params)
     delete params.deserializer

@@ -55,3 +55,14 @@ describe "Serializable", ->
     object = Example.deserialize(new Example(2, 1).serialize())
     expect(object.foo).toBe 2
     expect(object.bar).toBe 1
+
+  it "returns undefined from deserialize if the deserializer's version number doesn't match", ->
+    class Example extends Serializable
+      @version: 1
+      constructor: (@foo, @bar) ->
+      serializeParams: -> {@foo, @bar}
+
+    object = new Example(1, 2)
+    state = object.serialize()
+    Example.version = 2
+    expect(Example.deserialize(state)).toBeUndefined()
