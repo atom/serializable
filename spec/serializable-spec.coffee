@@ -64,5 +64,6 @@ describe "Serializable", ->
 
     object = new Example(1, 2)
     state = object.serialize()
+    expect(Example.deserialize(state)).toBeDefined()
     Example.version = 2
     expect(Example.deserialize(state)).toBeUndefined()
