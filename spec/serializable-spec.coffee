@@ -67,3 +67,11 @@ describe "Serializable", ->
     expect(Example.deserialize(state)).toBeDefined()
     Example.version = 2
     expect(Example.deserialize(state)).toBeUndefined()
+
+  it "returns undefined from deserialize if ::deserializeParams returns undefined", ->
+    class Example extends Serializable
+      constructor: ->
+      deserializeParams: ->
+
+    object = new Example
+    expect(object.testSerialization()).toBeUndefined()

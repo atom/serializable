@@ -24,7 +24,11 @@ class Serializable extends Mixin
     object = Object.create(deserializer.prototype)
     params = extend({}, state, params)
     delete params.deserializer
-    params = object.deserializeParams?(params) ? params
+
+    if typeof object.deserializeParams is 'function'
+      params = object.deserializeParams(params)
+
+    return unless params?
 
     deserializer.parameterNames ?= getParameterNames(deserializer)
     if deserializer.parameterNames.length > 1 or params.hasOwnProperty(deserializer.parameterNames[0])
