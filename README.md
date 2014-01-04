@@ -1,6 +1,6 @@
-# Nostalgia
+# Serializable
 
-Nostalgia provides a `Serializable` mixin to streamline the process of writing
+This npm provides a `Serializable` mixin to streamline the process of writing
 serializable classes. Include the mixin and implement two instance methods
 (`::serializeParams` and `::deserializeParams`) to add serialization to your
 class.
@@ -45,7 +45,7 @@ npm. To include it, use the `.includeInto` class method or simply subclass
 `Serializable`.
 
 ```coffee
-Serializable = require 'nostalgia'
+Serializable = require 'serializable'
 
 class Automobile extends Vehicle
   Serializable.includeInto(this)
@@ -66,7 +66,7 @@ class Automobile extends Vehicle
 ```
 
 If all your parameters are scalars, this is all that's required. When
-deserializing, Nostalgia will match up the names of the keys in the params hash
+deserializing, Serializable will match up the names of the keys in the params hash
 with the names of your constructor parameters to reconstruct your object.
 
 ```coffee
@@ -77,7 +77,7 @@ expect(auto2.engine).toBe 'v6'
 ```
 
 You can also take a params hash as your constructor argument, in which case
-Nostalgia won't attempt to match up constructor parameter names.
+Serializable won't attempt to match up constructor parameter names.
 
 ```coffee
 class Train extends Vehicle

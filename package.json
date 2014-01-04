@@ -1,5 +1,5 @@
 {
-  "name": "nostalgia",
+  "name": "serializable",
   "version": "0.0.0",
   "description": "A mixin for making serializable objects",
   "main": "./lib/serializable",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/atom/nostalgia.git"
+    "url": "https://github.com/atom/serializable.git"
   },
   "bugs": {
-    "url": "https://github.com/atom/nostalgia/issues"
+    "url": "https://github.com/atom/serializable/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/atom/nostalgia/raw/master/LICENSE.md"
+      "url": "http://github.com/atom/serializable/raw/master/LICENSE.md"
     }
   ],
   "dependencies": {
