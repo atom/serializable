@@ -14,6 +14,8 @@ class Serializable extends Mixin
     @deserializers[deserializer.name] = deserializer
 
   @deserialize: (state, params) ->
+    return unless state?
+
     if state.deserializer is @name
       deserializer = this
     else
