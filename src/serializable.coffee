@@ -1,4 +1,4 @@
-{extend} = require 'underscore'
+{extend} = require 'underscore-plus'
 Mixin = require 'mixto'
 getParameterNames = require 'get-parameter-names'
 

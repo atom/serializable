@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "mixto": "1.x",
-    "underscore": "~1.5.2",
+    "underscore-plus": "1.x",
     "get-parameter-names": "~0.1.2"
   },
   "devDependencies": {
