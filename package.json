@@ -21,7 +21,7 @@
     }
   ],
   "dependencies": {
-    "mixto": "~0.4.0",
+    "mixto": "1.x",
     "underscore": "~1.5.2",
     "get-parameter-names": "~0.1.2"
   },
