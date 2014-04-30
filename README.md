@@ -1,4 +1,4 @@
-# Serializable [![Build Status](https://travis-ci.org/atom/serializable?branch=master)](https://travis-ci.org/atom/serializable)
+# Serializable [![Build Status](https://travis-ci.org/atom/serializable.svg?branch=master)](https://travis-ci.org/atom/serializable)
 
 This npm provides a `Serializable` mixin to streamline the process of writing
 serializable classes. Include the mixin and implement two instance methods
