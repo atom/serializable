@@ -1,4 +1,4 @@
-# Serializable
+# Serializable [![Build Status](https://travis-ci.org/atom/serializable?branch=master)](https://travis-ci.org/atom/serializable)
 
 This npm provides a `Serializable` mixin to streamline the process of writing
 serializable classes. Include the mixin and implement two instance methods
@@ -59,9 +59,9 @@ version of all parameters required to reconstruct the object.
 ```coffee
 class Automobile extends Vehicle
   Serializable.includeInto(this)
-  
+
   constructor: (@doors=4, @engine='v8') ->
-  
+
   serializeParams: -> {@doors, @engine}
 ```
 
@@ -99,9 +99,9 @@ parent object. You perform this deserialization in the optional
 class Plane extends Vehicle
   constructor: (@engines, @pilot) ->
     @pilot ?= new Pilot(name: "Bob", plane: this)
-  
+
   serializeParams: -> {@engines, pilot: @pilot.serialize()}
-  
+
   deserializeParams: (params) ->
     params.pilot = Pilot.deserialize(params.pilot, plane: this)
     params
