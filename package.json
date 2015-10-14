@@ -1,6 +1,6 @@
 {
   "name": "serializable",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A mixin for making serializable objects",
   "main": "./lib/serializable",
   "scripts": {
