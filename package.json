@@ -14,12 +14,7 @@
   "bugs": {
     "url": "https://github.com/atom/serializable/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/atom/serializable/raw/master/LICENSE.md"
-    }
-  ],
+  "license": "MIT",
   "dependencies": {
     "mixto": "1.x",
     "underscore-plus": "1.x",
