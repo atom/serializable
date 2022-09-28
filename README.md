@@ -1,4 +1,5 @@
-# Serializable [![Build Status](https://travis-ci.org/atom/serializable.svg?branch=master)](https://travis-ci.org/atom/serializable)
+##### Atom and all repositories under Atom will be archived on December 15, 2022. Learn more in our [official announcement](https://github.blog/2022-06-08-sunsetting-atom/)
+ # Serializable [![Build Status](https://travis-ci.org/atom/serializable.svg?branch=master)](https://travis-ci.org/atom/serializable)
 
 This npm provides a `Serializable` mixin to streamline the process of writing
 serializable classes. Include the mixin and implement two instance methods
